@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head> 
+    <meta charset="UTF-8">
+    <title>js类的调用</title>
+</head>
+<script>
+//建立一个员工类属性
+
+Emp=function(x,y,z){
+this.empno=x;//工号
+this.ename=y;//名字
+this.sal=z;//收入
+this.work=function(){
+    console.log(this.ename + "is working!")
+}
+this.printf=function(){
+alert("工号为"+ this.empno +' 名字是'+ this.ename +" 工资为"+ this.sal)
+}
+this.printf2=function(){
+console.log("工号为"+ this.empno +' 名字是'+ this.ename +" 工资为"+ this.sal)
+}
+}
+
+var L=new Emp(123,'Liang',10000);
+L.work();
+L.printf2();
+var L2=new Emp(123);
+L2.work();
+
+Emp.prototype.getSal=function(){
+    return this.sal;
+}
+console.log(L.getSal())
+
+Emp.prototype.getEmpno=function(){
+return this.empno;
+}
+console.log(L.getEmpno())
+
+</script>
+
+<body>
+    <input type="button" value="获取工资" onclick="L.printf()">
+
+</input>
+</body>
+
+
+</html>

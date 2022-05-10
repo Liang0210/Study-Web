@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>symbol创建对象属性</title>
+</head>
+<body>
+    <script>
+/*         let game={}
+
+        //声明一个对象
+        let methods={
+            up:Symbol(),
+            down:Symbol()
+        };
+        game[methods.up]=function(){
+            console.log("我可以改变形状");
+        }
+
+        game[methods.down]=function(){
+            console.log("我可以快速下降!!")
+        } */
+        let youxi={
+            name:'狼人杀',
+            [Symbol('say')]:function(){
+                console.log("我可以发言")
+            },
+            name:'狼人杀',
+            [Symbol('zibao')]:function(){
+                console.log("我可以自爆")
+            }
+    
+        }
+        console.log(youxi)
+
+
+        class Person{
+            static [Symbol.hasInstance](){
+                console.log('我背用来检测类型了')
+            }
+        }
+        let o={};
+        console.log(o instanceof Person)
+
+        const arr=[1,2,3];
+        const arr2=[4,5,6];
+        arr2[Symbol.isConcatSpreadable]=false;
+        console.log(arr.concat(arr2));
+    </script>
+</body>
+</html>

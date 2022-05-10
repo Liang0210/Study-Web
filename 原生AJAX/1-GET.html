@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width"> 
+    <title>AJAX GET 请求</title>
+    <style>
+        #result{
+            width: 200px;
+            height: 100px;
+            border: solid 1px #90b;
+        }
+    </style>
+</head>
+<body>
+<button id="btn">点击发送请求</button>
+<div id="result"></div>
+<script type="text/javascript">
+    var btn=document.getElementById('btn');
+    var result=document.getElementById('result');
+    btn.onclick=function(){
+        //1，创建对象
+        const xhr =new XMLHttpRequest();
+        //2，设置请求方法和url
+        xhr.open('GET','http://127.0.0.1:8000/server');
+        //3,发送
+        xhr.send();
+        //4,事件绑定返回结果
+        xhr.onreadystatechange=function(){
+        //readystate表示xhr对象中的属性，表示状态 0 1 2 3 4
+         //服务端所有返回结果
+            if(xhr.readyState===4){
+                // 判断响应状态码 200 404 403 401 500
+                if(xhr.status>=200 && xhr.status<300){
+                    //200处理结果
+                    //1.响应行
+                    console.log(xhr.status);//状态码
+                    console.log(xhr.statusText);//状态字符串
+                    console.log(xhr.getAllResponseHeaders());//所有响应头
+                    console.log(xhr.response);//响应体
+                    result.innerHTML=xhr.response
+                }
+            }
+        }
+    }
+</script>
+</body>
+
+</html>

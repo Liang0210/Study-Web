@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>表单验证</title>
+    <style type="text/css">
+        span{
+            font-size: 12px;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<script type="text/javascript">
+/*
+1,用户名不能为空
+2，用户名必须在6-14位之间
+3，用户名只能有数字和字母组成，不能含有其他符号（正则表达式）
+4，密码和确认密码一致
+5，统一失去焦点验证
+6，错误信息统一在span当中提示，字体为12号红色
+7，文本框获得焦点知州，清空错误信息
+8，最终表单中的所有项合法方可提交
+
+*/
+window.onload=function(){
+    //给username绑定blur事件
+    var usernameElt=document.getElementById("username")
+    var nameErrorSpan= document.getElementById("nameError")
+    var pwdErrorSpan= document.getElementById("pwdError")
+    usernameElt.onblur=function(){
+        var username=usernameElt.value;
+        //去除前后空白
+        username=username.trim();
+        if(username==""){
+           nameErrorSpan.innerHTML="用户名不能为空";
+        }
+        else{
+            if(username.length<6||username.length>14){
+                nameErrorSpan.innerHTML="用户名长度必须在[6-14]之间";
+            }
+            else{
+                var regExp=/^[a-zA-Z0-9]+$/
+                
+                if(regExp.test(username)){
+
+                }
+                else{
+                    nameErrorSpan.innerHTML="用户名只能由数字和字母组成"
+                }
+            }
+        }
+    }
+    usernameElt.onfocus=function(){
+        nameErrorSpan.innerHTML="";
+    }
+    document.getElementById("confirmpwd").onblur=function(){
+        //获取第一个密码
+        var userpwd=document.getElementById("userpwd").value;
+        var confirmpwd=document.getElementById("confirmpwd").value;
+        if(userpwd != confirmpwd){
+            pwdErrorSpan.innerHTML="密码和确认密码不一致";
+        }
+        else{
+            pwdErrorSpan.innerHTML="";
+        }
+    }
+    document.getElementById("confirmpwd").onfocus=function(){
+        pwdErrorSpan.innerHTML="";
+    }
+    document.getElementById("submitbtn").onclick=function(){
+        //验证用户名密码？让用户名密码失去焦点
+        usernameElt.focus();
+        usernameElt.blur();
+        document.getElementById("confirmpwd").focus();
+        document.getElementById("confirmpwd").blur();
+        if(nameErrorSpan.innerHTML=="" && pwdErrorSpan.innerHTML==""){
+            var formObj=document.getElementById("userForm");
+            //通过调用submit()方法
+            formObj.submit();
+        }
+    }
+}
+
+
+</script>
+<form id="userForm" action="http://localhost:8080/oa/save">
+    用户名<input type="text" name="username" id="username"><span id="nameError"></span>
+    <br>
+    密码<input type="password" name="userpwd" id="userpwd">
+    <br>
+    确认密码<input type="password"  id="confirmpwd"><span id="pwdError"></span>
+    <br>
+    <input type="button" value="注册" id="submitbtn">
+</form>
+
+
+
+
+
+
+</body>
+
+</html>

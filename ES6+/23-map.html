@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map</title>
+</head>
+<body>
+    <script>
+        let m=new Map();
+        m.set('name',"kust");
+        m.set('change',function(){
+             console.log('我可以改变你');
+        });
+        let key={
+            school:'昆工'
+        };
+        m.set(key,['昆明','曲靖']);
+        m.delete('name');
+        for(let v of m){
+            console.log(v);
+        }
+        console.log(m,m.size);
+    </script>
+</body>
+</html>

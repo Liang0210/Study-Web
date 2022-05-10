@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>复选框的全选和取消全选</title>
+</head>
+<body>
+<input  type="checkbox"/ id="text">全选
+<br>
+<input  type="checkbox" name="aihao" value="smoke"/>抽烟
+<br>
+<input  type="checkbox" name="aihao" value="tangtou"/>烫头
+<br>
+<input  type="checkbox" name="aihao" value="drink"/>喝酒
+<br>
+<script type="text/javascript">
+window.onload=function(){
+    var firstChkElt=document.getElementById('text');
+    var aihaos=document.getElementsByName("aihao")
+    firstChkElt.onclick=function(){
+        //.cheked是checkbox的属性，为ture或
+        for(var i=0;i<aihaos.length;i++){
+            var aihaoChk=aihaos[i];
+            //将复选框选中
+            aihaoChk.checked=firstChkElt.checked;
+        }
+        //给每一个name=aihao的复选框绑定单机事件
+    }
+  for(var i=0;i<aihaos.length;i++){
+      aihaos[i].onclick=function(){
+      //在这里控制第一个复选框的选中状态
+      //一个复选框选中或者不选中取决于总数量
+      var count= aihaos.length;
+      var checkedCount=0;
+      for(var i=0;i<aihaos.length;i++){
+          if(aihaos[i].checked){
+              checkedCount++;
+          }
+      }
+      firstChkElt.checked=(count==checkedCount);
+      }
+  }
+
+}
+</script>
+
+
+
+
+
+
+
+</body>
+</html>

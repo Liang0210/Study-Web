@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>class继承</title>
+</head>
+<body>
+    <script>
+        class Phone{
+          //构造方法
+          constructor(brand,price){
+              this.brand=brand;
+              this.price=price;
+          }  
+          //父类的成员属性
+          call(){
+              console.log("我可以打电话");
+          }
+        }
+        class SmartPhone extends Phone{
+            constructor(brand,price,color,size){
+                super(brand,price);
+                this.color=color;
+                this.price=price;
+            }
+            photo(){
+                console.log('我可以拍照！')
+            }
+            call(){
+                console.log('我可以视频通话');
+            }
+        }
+        const OPPO=new SmartPhone('欧珀',2999,'blue',6.1);
+        console.log(OPPO);
+        OPPO.call();
+
+    </script>
+</body>
+</html>

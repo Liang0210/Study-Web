@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>获取下拉列表选中项的value</title>
+</head>
+<body>
+<select name="" id="province" onchange="alert(this.value)"><!--这里的this代表选择对象-->
+    <option value="">---请选择省份---</option>
+    <option value="001">河北省</option>
+    <option value="002">河南省</option>
+    <option value="003">云南省</option>
+
+</select>
+<select name="" id="province2" ">
+    <option value="">---请选择省份---</option>
+    <option value="001">河北省</option>
+    <option value="002">河南省</option>
+    <option value="003">云南省</option>
+
+<script type="text/javascript">
+window.onload=function(){
+    var selectElt=document.getElementById('province2')
+    selectElt.onchange=function(){
+console.log(this.value)
+    }
+}
+
+
+
+</script>
+
+
+
+
+
+
+
+</body>
+
+</html>

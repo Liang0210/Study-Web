@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href="Jay.jpg">
+    <link rel="stylesheet"  type="text/css" href="2.css">
+    <title>一个带杰伦图片的Html网页</title>
+   
+</head>
+<body>
+    <acronym title="World Wide Web">WWW</acronym>
+    <abbr title="etcetera">etc.</abbr>
+    <a id="tips"></a>
+    <br>
+   
+    <h1>这是一个标题</h1>
+    <h2>这是一个小一点点标题</h2>
+    <a href="https://www.runoob.com/html/html-links.html#tips">
+        一个网页链接</a>
+    <br>
+    <br>
+    <br>
+    <h4>两行三列:</h4>
+    <table class="mytable" width="500 px" border="0">
+        <tr>
+            <th colspan="2" style="background-color: chartreuse;color:brown"; width: max-content;height: auto;">
+            表头
+            </th>
+        </tr>
+    <tr>
+      <td style="background-color: burlywood;">男生</td>
+      <td  style="background-color: tomato;width: 400px;">帅气<br>可爱<br>强</td>
+    </tr>
+    <tr>
+      <td colspan="2" style="background-color: rgb(23, 31, 31);color: white;">表尾</td>
+    
+    </tr>
+    </table>
+    <br>
+    <h3>无序列表：</h3>
+    <ul id="liebiao">
+        <li>我</li>
+        <li>爱</li>
+        <li>你</li>
+    </ul>
+    <br>
+    
+  
+<p>这是一个段落</p>
+<img loading="lazy" src="111.jpg" width="900" height="600"/>
+<br>
+<div style="background-color: brown;color: cyan;">
+<h1>这里是一个区块</h1>
+<br>
+<div style="background-color: red;">
+这里是区块里的一块
+</div>
+<br>
+测试测试测试
+</div>
+<br>
+<h1>接下来是一个表单</h1>
+<br>
+<form method="get" autocomplete="on">
+    <fieldset style="width: 600px;margin: auto;" >
+    <legend style="text-align: left;"><i>登录界面:</i></legend>
+    假装输入账户：<input type="text" QQ="QQ" name="qq">
+    <br>
+    假装输入密码：<input type="password" PASSWORD="PASSWORD" name="pw">
+    <br/>
+    <input type="radio" name="sex" value="male">鸽鸽<br>
+    <input type="radio" name="sex" value="female">美眉
+    <br>
+    你的学历是？
+    <br>
+    <input type="checkbox" name="study" value="本科">本科<br>
+    <input type="checkbox" name="study" value="高中">高中<br>
+    <input type="checkbox" name="study" value="初中">初中<br>
+    <input type="submit" value="Submit">
+</fieldset>
+</form>
+<br>
+<h2>下面是一个嵌入式网页</h2><br>
+<iframe src="https://www.runoob.com/html/html-iframes.html" width="900" height="600"></iframe>
+<br>
+<script>
+    document.write("Hellow World");
+</script>
+<br>
+<p id="change">这是一句会变身的句子</p>
+<script>
+    function myFunction()
+    {
+        document.getElementById("change").innerHTML="你好啊 JavaScript";
+    }
+</script>
+<br>
+<button type="button" onclick="myFunction()">点我</button>
+<br>
+<canvas id="myCanvas" width="200" height="100" style="border: 1px solid #c3c3c3;"
+>浏览器不支持canvas</canvas>
+<script>
+var c=document.getElementById("myCanvas");
+var ctx=c.getContext("2d"); // 创建渐变
+var grd=ctx.createLinearGradient(0,0,200,0);
+grd.addColorStop(0,"rgb(100,0,0");
+grd.addColorStop(0.5,"rgb(190, 240, 256)");
+grd.addColorStop(1,"white"); // 填充渐变
+ctx.fillStyle=grd;
+ctx.fillRect(10,10,180,80);
+    ctx.moveTo(0,0);
+    ctx.lineTo(200,100);
+    ctx.stroke();
+    ctx.moveTo(0,100);
+    ctx.lineTo(200,0);
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.arc(100,50,40,0,2*Math.PI);
+    ctx.stroke();
+    ctx.strokeStyle="red";
+    ctx.font="20px Arial" ;
+    ctx.strokeText("Hello World",15,35,)
+    </script>
+
+<br>
+
+<br>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="190">
+    <polygon points="100,10 40,180 190,60 10,60 160,180"
+    style="fill:lime;stroke:purple;stroke-width:5;fill-rule:evenodd;"/>
+ </svg>
+ <br>
+ <div style="text-align: center;">
+    <button onclick="playPause()">播放/暂停</button>
+    <button onclick="makeBig()">放大</button>
+    <button onclick="makeSmalle()">缩小</button>
+    <button onclick="makeNormal()">普通</button>
+<br>
+<video id="myvideo1"  width="800">
+<source src="上海.mp4" type="video/mp4">
+</video>
+ </div>
+ <script>
+     var myVideo=document.getElementById("myvideo1");
+     function playPause()
+     {
+         if(myVideo.paused)
+         myVideo.play();
+         else
+         myVideo.pause();
+     }
+     function makeBig()
+     {
+         myVideo.width=1080;
+     }
+     function makeSmalle()
+     {
+         myVideo.width=600;
+     }
+     function makeNormal()
+     {
+         myVideo.width=800;
+     }
+ </script>
+ <form action="https://www.runoob.com/try/demo_source/demo-form.php">
+    生日: <input type="date" name="bday"><br>
+    <input type="submit">
+  </form>
+  <br>
+  <p style="font-size: 48px;">
+&#128516;&#128514;</p>
+<br>
+<p id="hezi" >
+    这是一个盒子模型有着25px的外间距和25px的内间距，25px的外边框
+</p>
+<br>
+<p class="one" style="background: cornsilk;">
+    这是一个只有一边的边框
+</p>
+<diV id="overflowtest">
+    <p>还可以滚动滑动条</p>
+    <p>还可以滚动滑动条</p>
+    <p>还可以滚动滑动条</p>
+    <p>还可以滚动滑动条</p>
+    <p>还可以滚动滑动条</p>
+    <p>还可以滚动滑动条</p>
+    <p>还可以滚动滑动条</p>
+    <p>还可以滚动滑动条</p>
+    <p>还可以滚动滑动条</p>
+    <p>还可以滚动滑动条</p>
+</diV>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>拼接html的方式，设置table的<tbody></tbody></title>
+</head>
+<body>
+    <input type="button" value="查看学生信息列表" id="display">
+<table border="1px" width="40%">
+    <tr>
+        <th>序号</th>
+        <th>学生姓名</th>
+        <th>学生年龄</th>
+    </tr>
+    <tbody id="stutbody">
+
+    </tbody>
+</table>
+总记录函数是<span id="totalspan"></span>条
+<script type="text/javascript">
+//java过来的字符串{\"total\":3,\"students\":[{\"name\":\"zhangsan\",\"age\":20},{\"name\":\"lisi\",\"age\":20},{\"name\":\"wangwu\",\"age\":20}]}
+var fromjava="{\"total\":3,\"students\":[{\"name\":\"zhangsan\",\"age\":20},{\"name\":\"lisi\",\"age\":20},{\"name\":\"wangwu\",\"age\":20}]}";
+window.onload=function(){
+    document.getElementById("display").onclick=function(){
+        console.log('显示学生信息')
+        window.eval("var json="+fromjava)
+        //设置总记录条数
+        document.getElementById("totalspan").innerHTML=json.total;
+        var studentArr=json.students;
+        var html=""
+        for(var i=0;i<studentArr.length;i++){
+            var s=studentArr[i]
+            html +="<tr>";
+            html +="<td>"+(i+1)+"</td>"
+            html +="<td>"+s.name+"</td>"
+            html +="<td>"+s.age+"</td>"
+            html +="</tr>"
+        }
+    document.getElementById("stutbody").innerHTML=html;
+    }
+}
+
+
+
+</script>
+
+
+
+
+
+
+
+</body>
+
+</html>

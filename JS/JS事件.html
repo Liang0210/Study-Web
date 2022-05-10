@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head> 
+    <meta charset="UTF-8">
+    <title>js类的事件</title>
+<style type="text/css">
+input{
+    border: 1px solid #ccc;
+    height: 50px;
+    width: 200px;
+}
+#mouseDiv{
+    border: 1px solid #ccc;
+    background-color: aqua;
+    height: 50px;
+    width: 200px;
+}
+</style>
+</head>
+<script>
+
+</script>
+
+<body onload="console.log('加载完毕')">
+    测试表单的提交和重置事件：
+    <form action="" onsubmit="alert('表单提交了')" onreset="console.log('表单重置了')">
+  <input type="submit" value="提交"/>
+  <input type="reset" value="重置"/>
+    </form>
+    <br>
+    测试失去焦点：<input type="text"  onblur="console.log('失去焦点了')">
+    <br>
+  测试获得焦点：<input type="text"  onfocus="console.log('获得焦点了')">
+  <br>
+  测试click事件：<input type="button" value="click事件" onclick="console.log('click了')">
+  <br>
+  测试dbclick事件：<input type="button" value="dblclick事件" ondblclick="console.log('dblclick了')">
+  <br>
+  测试keydown：<input type="text"  onkeydown="console.log('keydown')">
+  <br>
+  测试keyup：<input type="text"  onkeyup="console.log('keyup')">
+  <br>
+  测试mouse相关事件:
+  <div id="mouseDiv" onmousedown="console.log('鼠标按下')" 
+  onmouseover="console.log('鼠标经过')"
+  onmousemove="console.log('鼠标移动')"
+  onmouseout="console.log('鼠标离开')"
+  onmouseup="console.log('鼠标弹起')">
+  </div>
+  <br>
+测试文本选中事件:
+<textarea rows="10" cols="30" onselect="console.log('文本背选中了')"></textarea>
+<br><br>
+测试select事件
+<select onchange="console.log('选项被修改')">
+<option value="高中">高中</option>
+<option value="本科">本科</option>
+<option value="硕士">硕士</option>
+</select>
+</body>
+
+
+</html>

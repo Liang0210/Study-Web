@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+</head>
+<script type="text/javascript" src="JQ ku/jquery-1.12-3.js"></script>
+<script type="text/javascript">
+//需求1：点击按钮，显示按钮的文本，显示一个新的输入框
+//需求2：遍历输出数组中的所有元素值
+//去掉" my atguigu "两端的空格
+$(function(){//文档加载完成执行 
+   $('#btn').click(function(){
+       //alert(this.innerHTML)
+       alert($(this).html())
+       $('<input type="text" name="msg3"><br/>').appendTo('div')
+   })
+})
+var arr=[2,4,7]
+$.each(arr,function(index,item){
+    console.log(index,item)
+})
+
+var str='  my atguigu  '
+//console.log('---'+str.trim()+'---')
+console.log('---'+$.trim(str)+'---')
+</script>
+<body>
+<div>
+<button id="btn">测试</button>
+<br/>
+<input type="text" name="msg1"><br/>
+<input type="text" name="msg2"><br/>
+
+</div>
+</body>
+
+</html>

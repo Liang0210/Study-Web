@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>let</title>
+</head>
+<body>
+    <script>
+        let a;
+        let b,c,d;
+        let e=100;
+        let f=520,g='iloveyou',h=[];
+        //不能重复声明
+        
+        //2、块级作用域，全局，函数，eval
+        //if else while for也算块级作用域
+        {
+            let girl="lll"
+            console.log(girl);
+        }
+        //console.log(girl);
+
+        //3.不存在变量提升
+        console.log(song);
+        var song="sss"
+        //let song='sss'会报错
+
+        //4、不影响作用域
+        {
+            let school='昆工';
+            function fn(){
+                console.log(school);
+            }
+            fn();
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>迭代器</title>
+</head>
+<body>
+    <script>
+/*         const xiyou=['唐僧','猪八戒','孙悟空','沙僧']
+
+        for(let v of xiyou){
+            console.log(v);
+        }  */
+
+/* 原理: let iterator = xiyou[Symbol.iterator]();
+        console.log(iterator.next());
+        console.log(iterator.next());
+        console.log(iterator.next());
+        console.log(iterator.next());
+        console.log(iterator.next()); */
+        
+        //迭代器 自定义遍历数据
+        const banji={
+            name:"终极一班",
+            stus:['xiaominh',
+                  'xiaoning',
+                "xxxxtain"
+            ],
+            [Symbol.iterator](){
+                let index=0;
+                let _this=this;
+
+                return{
+                    next:function(){
+                        if(index<_this.stus.length){
+                        const result={value:_this.stus[index],done:false};
+                        index++;
+                        return result;
+                    
+                }else{
+                    return {value:undefined,done:true};
+                    }
+            }
+                }
+            
+                }
+        }
+        for(let v of banji){
+            console.log(v);
+        }
+    </script>
+</body>
+</html>

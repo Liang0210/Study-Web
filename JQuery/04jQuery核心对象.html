@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+</head>
+<script type="text/javascript" src="JQ ku/jquery-1.12-3.js"></script>
+<script type="text/javascript">
+$(function(){
+    var $buttons=$('button')
+    console.log($buttons.size(),$buttons.length)
+    
+    console.log($buttons[1].innerHTML,$buttons.get(1).innerHTML)
+    
+    $buttons.each(function(){
+    console.log(this.innerHTML)
+    })
+
+    console.log($('#btn3').index())
+})
+</script>
+<body>
+<button>测试1</button>
+<button>测试2</button>
+<button id="btn3">测试3</button>
+<button>测试4</button>
+</body>
+
+</html>

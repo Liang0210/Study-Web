@@ -1,0 +1,46 @@
+body 
+{
+    background-color:rgb(190, 240, 223);
+    text-align: center;
+    margin-left: 50px;
+    margin-right:300px;
+    padding: auto;
+}
+.mytable{
+margin: auto;
+}
+td{text-align: left;}
+p {color:rgb(0, 101, 126);text-align: center;}
+h1 {font-family:verdana;color: rgb(241, 67, 140);}
+h1:before {content:"🗡";}
+a {color:rgb(21, 109, 131)}
+li{text-align: center;}
+ul{list-style-type: square}
+#liebiao{text-align: center;}
+#hezi{
+    margin: auto;
+    background-color: rgb(232, 220, 243);
+    width: 600px;
+    border:25px solid green;
+    text-align: center;
+    padding:25px;
+ 
+}
+p.one 
+{
+	border-left-style:solid;
+	border-width:5px;
+    border-color: cornflowerblue;
+    
+}
+#overflowtest
+{
+    background: #4CAF50;
+    color: white;
+    padding: 15px;
+    margin: auto;
+    width: 80%;
+    height: 100px;
+    overflow: scroll;
+    border: 1px solid #ccc;
+}

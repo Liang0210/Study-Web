@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>模块化
+    </title>
+</head>
+<body>
+    <script type="module">    
+        //1,通用方法
+/*         import * as m1 from "./m/m1.js";    
+        import * as m2 from "./m/m2.js";    
+        import * as m3 from "./m/m3.js";    
+
+        console.log(m3);
+        m3.default.Study(); */
+
+        //2,解构赋值
+/*         import{school,teach} from "./m/m1.js";
+        import{school as school2,findjob} from "./m/m2.js";
+        import{default as m3} from "./m/m3.js";
+        console.log(school);
+        console.log(teach);
+        console.log(m3); */
+
+        //3,简便方法只针对直接暴露
+/*         import m3 from"./m/m3.js";
+        console.log(m3); */
+    </script>
+    <script src="./m/app.js" type="module"></script>
+</body>
+</html>

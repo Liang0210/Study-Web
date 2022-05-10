@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width"> 
+    <title>重复请求问题</title>
+    <style>
+        #result{
+            width: 200px;
+            height: 100px;
+            border: solid 1px #903;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn1">点击请求</button>
+<div id="result"></div>
+<script type="text/javascript">
+var btn1=document.getElementById('btn1')
+var btn2=document.getElementById('btn2')
+let x=null;
+//是否正在发送
+let isSending=false;
+btn1.onclick=function(){
+    if(isSending) x.abort();
+    //如果正在发送请求 则取消请求
+    x=new XMLHttpRequest();
+    //修改标识变量
+    isSending=true;
+    x.open('get','http://127.0.0.1:8000/delay')
+    x.send();
+    x.onreadystatechange=function(){
+        if(x.readyState===4){
+            isSending=false;
+        }
+    }
+}
+</script>
+</body>
+
+</html>

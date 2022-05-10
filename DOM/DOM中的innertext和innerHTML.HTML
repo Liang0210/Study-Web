@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>DOM</title>
+    <style type="text/css">
+        #div1{background-color: burlywood;
+        border: 1px solid red;
+        width: 200px;
+        height: 50px;
+    }
+
+    </style>
+</head>
+<body>
+<input type="button" id="btn" value="设置div内容">
+    <!--div独占一行-->
+<input type="button" id="spanbtn" value="设置span内容">
+<div id="div1"></div>
+<!--span的大小会随着span的内容多少而变化-->
+<span id="span1"></span>
+
+<script type="text/javascript">
+window.onload=function(){
+document.getElementById("btn").onclick =function(){
+    console.log(1111111)
+   var divElt= document.getElementById("div1");
+   //通过元素的innerHTML属性来设置内部的内容
+   //inner是属性，不算方法，innerHTML会将后面的代码当作HTML代码解释执行
+   //divElt.innerHTML="<font color='red'>用户名为空</font>";
+   //innerText可以设置元素当中的内容但是是文本属性不当Html代码执行
+   //divElt.innerText="<font color='red'>用户名为空</font>";
+}
+document.getElementById("spanbtn").onclick=function(){
+    console.log(22222);
+    var spanElt=document.getElementById("span1");
+    //spanElt.innerHTML="<a href='http://baidu.com'>百度</a>";
+    spanElt.innerText="<a href='http://baidu.com'>百度</a>";
+
+}
+
+
+}
+
+
+
+
+
+</script>
+
+
+
+
+
+
+
+</body>
+
+</html>

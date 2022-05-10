@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>JSON对象创建访问属性</title>
+</head>
+<body>
+    
+<script type="text/javascript">
+/*
+1.JSON:javaScript Object Notation(js标记对象)
+轻量级，体现在JSON的体积小。虽然一个小的体积可能表示的数据很多。
+什么是数据交换：不同语言之间的数据通讯
+
+JSON和XML都是非常标准数据交换格式
+XML体积大，解析难度大
+相对比来说XML的语法严格，JSON松散
+
+2.在JavaScript当中，json是以对象的形式存在
+
+3.js中，怎么定义JSON格式的对象，怎么访问对象的属性？
+语法：
+var jsonObj={
+     "属性名"：属性值
+     "属性名"：属性值
+     "属性名"：属性值
+     "属性名"：属性值
+     "属性名"：属性值
+}
+JSON是数组大括号包起来就可
+*/
+var emp={
+    "empno":7369,
+    "ename":"smith",
+    "sal":8000
+}
+//访问对象属性
+//第一种方式
+console.log(emp.empno)
+console.log(emp.ename)
+console.log(emp.sal)
+//第二种方式
+console.log(emp["empno"])
+console.log(emp["ename"])
+console.log(emp["sal"])
+
+var student={
+"name":"zhangsan",
+"sex":false,
+"aihao":["抽烟","喝酒","烫头"]
+}
+console.log(student.name)
+console.log(student.sex ? "男":"女")
+var aihaos=student.aihao;
+for(var i=0;i<aihaos.length;i++){
+  console.log(aihaos[i])
+}
+</script>
+
+
+
+
+
+
+
+</body>
+
+</html>
